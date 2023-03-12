@@ -62,7 +62,11 @@ public class Hub {
             }
             c2++;
         } else if (columna == 3) {
-
+            for (int i = fila; i < Hub.length; i++) {
+                for (int j = columna; j < Hub[0].length; j++) {
+                    Hub[i - 1][j - 1] = Hub[i - 2][j - 1];
+                }
+            }
         }
     }
 
