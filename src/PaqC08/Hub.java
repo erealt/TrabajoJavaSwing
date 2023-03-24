@@ -30,8 +30,16 @@ public class Hub {
         }
     }
 
-    public void desapilar(int fila, int columna) {
-        Hub[fila - 1][columna - 1] = null;
+    public void desapilar( int columna) {
+        for (int i = 0; i <Hub[0].length ; i++) {
+            if(columna==i){
+
+                Hub[Hub.length-1][i]=null;
+
+            }
+
+        }
+
 
     }
 

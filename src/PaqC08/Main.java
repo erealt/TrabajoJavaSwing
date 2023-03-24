@@ -15,7 +15,7 @@ public class Main {
         H.apilar(C1);
         H.apilar(C2);
         H.apilar(C3);
-        H.desapilar(10,1);
+        H.desapilar(1);
         //System.out.println(C1.toString());
         System.out.println(H.toString());
         System.out.println(H.mostrarDatosContenedor(54452));
