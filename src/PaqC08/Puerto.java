@@ -23,7 +23,7 @@ public class Puerto {
     public void apilar_contenedor(){
 
     }
-    public  Hub desapilar(int hub,int columna){
+    public  Hub desapilar(int hub,int columna){// tiene que devolver un Hub
         Hub h=new Hub();
         return h;
     }
