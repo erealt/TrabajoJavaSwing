@@ -59,7 +59,7 @@ public class Hub {
         for (int i = 0; i < Hub.length; i++) {
             for (int j = 0; j < Hub[0].length; j++) {
 
-                if (Hub[i][j] != null && Hub[i][j].getPais() == pais) {
+                if (Hub[i][j] != null && Hub[i][j].getPais().equals(pais)) {
                     contador=contador +1;
                 }
             }
