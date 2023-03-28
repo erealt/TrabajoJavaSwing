@@ -18,29 +18,55 @@ public class Hub {
         return x;
     }
 
-    public void apilar(Contenedor Con) {
-
-        for (int i = 0; i <Hub[0].length ; i++) {
-            if(Con.getPrioridad()==i){ // si la prioridad del contenedor es igual a la columna del hub
-
-                    Hub[Hub.length-1][i]=Con; // se guarda el contenedor en la ultima fila de esa columna
+    public boolean apilar(Contenedor c){
+        boolean x =false;
+        if (c.getPrioridad()==1){
+            for (int i= Hub.length;i>0;i--){
+                if (Hub[i-1][0]==null){ Hub[i-1][0]=c;
+                    x=true
+                ;break;}
 
             }
 
+
         }
+        if (c.getPrioridad()==2){
+            for (int i=Hub.length;i>0;i--){
+                if (Hub[i-1][1]==null){ Hub[i-1][1]=c;
+                    x=true;
+                    break;}
+
+            }
+
+
+        }
+        if (c.getPrioridad()==3){
+            boolean salir=false;;
+            for (int j=2;j<Hub[0].length;j++){
+                for (int i=Hub.length;i>0;i--){
+
+                    if (Hub[i-1][j]==null){Hub[i-1][j]=c;
+                        x=true;
+                        salir=true;
+                        break;}
+                }
+                if (salir==true) break;
+            }
+        }
+        return x;//devuelve si esta o no con true o false
     }
 
-    public void desapilar( int columna) {
-        for (int i = 0; i <Hub[0].length ; i++) {
-            if(columna==i){
-
-                Hub[Hub.length-1][i]=null;
-
+    public Contenedor desapilar(int col) {
+        for (int i = 0; i < Hub.length; i++) {
+            if (Hub[i][col - 1] != null) {
+                {
+                    Contenedor c = Hub[i][col - 1];
+                    Hub[i][col - 1] = null;
+                    return c;
+                }
             }
-
         }
-
-
+        return null;
     }
 
     public String mostrarDatosContenedor(int NIC) {
@@ -51,7 +77,7 @@ public class Hub {
                 }
             }
         }
-        return "El contenedor no está en el hub.";
+        return null;
     }
 
     public int contenedoresPais(String pais) {
