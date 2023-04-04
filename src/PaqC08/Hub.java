@@ -19,12 +19,13 @@ public class Hub {
     }
 
     public boolean apilar(Contenedor c){
-        boolean x =false;
+        boolean x =false;//para ver si el contenedor se ha apilado o no
         if (c.getPrioridad()==1){
             for (int i= Hub.length;i>0;i--){
-                if (Hub[i-1][0]==null){ Hub[i-1][0]=c;
-                    x=true
-                ;break;}
+                if (Hub[i-1][0]==null){ //si la posicion tiene un null es que esta "vacia" entonces apilamos el contenedor
+                    Hub[i-1][0]=c;
+                    x=true;// true si se ha apilado
+                    break;}
 
             }
 
@@ -32,7 +33,8 @@ public class Hub {
         }
         if (c.getPrioridad()==2){
             for (int i=Hub.length;i>0;i--){
-                if (Hub[i-1][1]==null){ Hub[i-1][1]=c;
+                if (Hub[i-1][1]==null){
+                    Hub[i-1][1]=c;
                     x=true;
                     break;}
 
@@ -41,7 +43,7 @@ public class Hub {
 
         }
         if (c.getPrioridad()==3){
-            boolean salir=false;;
+            boolean salir=false; // como estamos en la ultima prioridad si se consigue apilar en este se pondra a true y nos salimos de recorrer el hub
             for (int j=2;j<Hub[0].length;j++){
                 for (int i=Hub.length;i>0;i--){
 
@@ -53,20 +55,20 @@ public class Hub {
                 if (salir==true) break;
             }
         }
-        return x;//devuelve si esta o no con true o false
+        return x;//devuelve si se ha apilado o no
     }
 
-    public Contenedor desapilar(int col) {
+    public Contenedor desapilar(int col) {//retorna el contenedor desapilado
         for (int i = 0; i < Hub.length; i++) {
-            if (Hub[i][col - 1] != null) {
+            if (Hub[i][col - 1] != null) { // si la columna que pasamos por parametros esta llena
                 {
-                    Contenedor c = Hub[i][col - 1];
-                    Hub[i][col - 1] = null;
-                    return c;
+                    Contenedor c = Hub[i][col - 1]; // se desapila el contenedor y se guarda
+                    Hub[i][col - 1] = null;// se pone a nulo esa columna
+                    return c;//retornamos el contenedor
                 }
             }
         }
-        return null;
+        return null; // si no se ha conseguido desapilar devuelve null
     }
 
     public String mostrarDatosContenedor(int NIC) {

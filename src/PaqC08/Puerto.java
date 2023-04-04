@@ -45,7 +45,7 @@ public class Puerto  {
         Contenedor contenedor;
         for (int i =p.length-1; i <-1  ; i++) {
             contenedor=p[i].desapilar(columna);//desapilamos la columna que se pase por argumento
-            if(contenedor !=null){
+            if(contenedor !=null){ // si el contenedor esta lleno
                 return contenedor;
             }
 
