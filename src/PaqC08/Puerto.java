@@ -34,8 +34,8 @@ public class Puerto  {
         boolean r=false;
         for (int i=0;i<p.length;i++){
 
-            r=p[i].apilar(c);
-            if (r==true) break;
+            r=p[i].apilar(c);// se llama al metodo apilar de hub , este retorna si se ha conseguido apilar o no
+            if (r==true) break; // si el metodo apilar devuelve true , se ha conseguido apilar el contenedor y nos salimos con el break
 
         }
         return r;
@@ -44,8 +44,8 @@ public class Puerto  {
     public Contenedor desapilar(int columna){// tiene que devolver un Contenedor
         Contenedor contenedor;
         for (int i =p.length-1; i <-1  ; i++) {
-            contenedor=p[i].desapilar(columna);//desapilamos la columna que se pase por argumento
-            if(contenedor !=null){ // si el contenedor esta lleno
+            contenedor=p[i].desapilar(columna);//desapilamos la columna que se pase por argumento con el metodo desapilar de hub(retorna el contenedor desapilado)
+            if(contenedor !=null){ // si se ha devuelto el contenedor
                 return contenedor;
             }
 
