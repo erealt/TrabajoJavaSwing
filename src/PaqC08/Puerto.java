@@ -52,4 +52,11 @@ public class Puerto  {
         }
         return null;
     }
+    public int numPaisPuerto(String pais){
+        int numero=0;
+        for (int i=0;i<p.length;i++){
+            numero=numero+p[i].contenedoresPais(pais);
+        }
+        return numero;
+    }
 }

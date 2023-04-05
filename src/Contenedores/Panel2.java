@@ -1,8 +1,7 @@
 package Contenedores;
 
 import javax.swing.*;
-import java.awt.event.FocusAdapter;
-import java.awt.event.FocusEvent;
+
 
 public class Panel2  extends JFrame {
 
@@ -19,7 +18,7 @@ public class Panel2  extends JFrame {
     private JTextArea textDescrip;
     private JRadioButton prioridad3;
 
-    public Panel2(String ident,String peso,String descrip,String remitente,String recept,String pais, int prioridad,int aduana){
+    public Panel2(String ident,String peso,String descrip,String remitente,String recept,String pais, int prioridad,boolean aduana){
         setTitle("Gestión de contenedores");
         setSize(800, 500);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -45,9 +44,9 @@ public class Panel2  extends JFrame {
             prioridad3.setSelected(true);
         }
 
-        if(aduana==1){
+        if(aduana==true){
             inspeccionadoEnAduanasCheckBox.setSelected(true);
-        } else if (aduana==0) {
+        } else if (aduana==false) {
             inspeccionadoEnAduanasCheckBox.setSelected(false);
 
         }
