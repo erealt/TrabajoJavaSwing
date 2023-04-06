@@ -105,8 +105,17 @@
             </constraints>
             <properties>
               <model>
-                <item value="Shanghai"/>
                 <item value="Albania"/>
+                <item value="Alemania"/>
+                <item value="Bolivia"/>
+                <item value="Canada"/>
+                <item value="Dinamarca"/>
+                <item value="España"/>
+                <item value="Francia"/>
+                <item value="Italia"/>
+                <item value="Japon"/>
+                <item value="Lituania"/>
+                <item value="Mexico"/>
               </model>
             </properties>
           </component>
@@ -229,7 +238,16 @@
         <properties>
           <model>
             <item value="Albania"/>
+            <item value="Alemania"/>
+            <item value="Bolivia"/>
+            <item value="Canada"/>
+            <item value="Dinamarca"/>
             <item value="España"/>
+            <item value="Francia"/>
+            <item value="Italia"/>
+            <item value="Japon"/>
+            <item value="Lituania"/>
+            <item value="Mexico"/>
           </model>
         </properties>
       </component>
