@@ -76,7 +76,22 @@ public class Hub {
             for (int j = 0; j < Hub[0].length; j++) {
                 if (Hub[i][j] != null && Hub[i][j].getNIC() == NIC) {
                     return Hub[i][j].toString();
+
                 }
+            }
+        }
+        return null;
+    }
+
+    public Contenedor mostrarContenedor(int NIC) {
+        for (int i = 0; i < Hub.length; i++) {
+            for (int j = 0; j < Hub[0].length; j++) {
+                if (Hub[i][j] != null && Hub[i][j].getNIC() == NIC) {
+                    Contenedor c1 = Hub[i][j];
+
+                    return c1;
+                }
+
             }
         }
         return null;
