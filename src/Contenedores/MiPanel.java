@@ -52,9 +52,7 @@ public class MiPanel extends JFrame {
         G.add(prioridad1);
         G.add(prioridad2);
         G.add(prioridad3);
-        mostrarDatosContenedorButton.addActionListener(new ActionListener() {
-
-
+        mostrarDatosContenedorButton.addActionListener(new ActionListener() {// no funciona
 
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -67,11 +65,6 @@ public class MiPanel extends JFrame {
                     new Panel2(Integer.toString(contenedor.getNIC()),Integer.toString(contenedor.getPeso()),contenedor.getDescripcion(),contenedor.getEmpresaDeEnvio(),contenedor.getEmpresaDeEntrega(),contenedor.getPais(),contenedor.getPrioridad(),contenedor.getControlAduanas());
 
                 }
-
-
-
-
-
 
 
             }
@@ -112,6 +105,15 @@ public class MiPanel extends JFrame {
                  if (salida==true){ // sacar un mensaje si se ha conseguido apilar o no
 
                      JOptionPane.showMessageDialog(null,"Contenedor apilado correctamente");
+                     textident.setText(" ");
+                      textToneladas.setText(" ");
+                     textDescrip.setText(" ");
+                     textRemitente.setText(" ");
+                     textRecep.setText(" ");
+                     G.clearSelection();
+                     inspeccionadoEnAduanasCheckBox.setSelected(false);
+
+
                  } else if (salida==false) {
                      JOptionPane.showMessageDialog(null,"No se ha podido apilar el contenedor");
 
