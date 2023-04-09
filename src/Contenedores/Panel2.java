@@ -36,6 +36,17 @@ public class Panel2  extends JFrame {
         textRemitente.setText(remitente);
         textPais.setText(pais);
 
+        textIdent.setEditable(false);
+        textDescrip.setEditable(false);
+        textPais.setEditable(false);
+        textRemitente.setEditable(false);
+        prioridad1.setEnabled(false);
+        prioridad2.setEnabled(false);
+        prioridad3.setEnabled(false);
+        textReceptora.setEditable(false);
+        textToneladas.setEditable(false);
+        inspeccionadoEnAduanasCheckBox.setEnabled(false);
+
         if(prioridad==1){
           prioridad1.setSelected(true);
         } else if (prioridad==2) {

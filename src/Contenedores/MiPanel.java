@@ -33,9 +33,10 @@ public class MiPanel extends JFrame {
     private JTextArea textestado;
 
 
-   String ident,peso,descripcion,remitente,receptora,paisselect,id,mostrar,col, paiscontar;
+   String ident,peso,descripcion,remitente,receptora,paisselect,col, paiscontar
+           ;
    Contenedor contenedor;
-   int prioridad, numpais;
+   int prioridad, numpais,id;
    boolean aduana;
     Puerto p = new Puerto();
     Hub h = new Hub();
@@ -51,51 +52,32 @@ public class MiPanel extends JFrame {
         G.add(prioridad1);
         G.add(prioridad2);
         G.add(prioridad3);
-
-
-
         mostrarDatosContenedorButton.addActionListener(new ActionListener() {
+
+
+
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                id=IDContenedorTextField.getText();
-                mostrar= h.mostrarDatosContenedor(Integer.parseInt(id));
-
-
-                new Panel2(mostrar,peso,descripcion,remitente,receptora,paisselect,prioridad,aduana);
-
-
-            }
-        });
-
-
-        textident.addFocusListener(new FocusAdapter() {
-            @Override
-            public void focusLost(FocusEvent e) {
-
-                super.focusLost(e);
-                try {
-                    int dato = Integer.parseInt(textident.getText());
-                }catch(NumberFormatException ex){
-
-                    JOptionPane.showMessageDialog(null,"El identificador no es un entero, vuelve a teclearlo");
+                id=Integer.parseInt(IDContenedorTextField.getText());
+                contenedor= h.mostrarContenedor(id);
+                if (contenedor ==null){
+                    JOptionPane.showMessageDialog(null,"El identificador no existe");
+                }else{
+                    new Panel2(Integer.toString(contenedor.getNIC()),Integer.toString(contenedor.getPeso()),contenedor.getDescripcion(),contenedor.getEmpresaDeEnvio(),contenedor.getEmpresaDeEntrega(),contenedor.getPais(),contenedor.getPrioridad(),contenedor.getControlAduanas());
 
                 }
+
+
+
+
+
+
+
             }
         });
-        textToneladas.addFocusListener(new FocusAdapter() {
-            @Override
-            public void focusLost(FocusEvent e) {
-                super.focusLost(e);
-                try {
-                    int dato = Integer.parseInt(textToneladas.getText());
-                }catch(NumberFormatException ex){
 
-                    JOptionPane.showMessageDialog(null,"El peso no es un entero, vuelve a teclearlo");
 
-                }
-            }
-        });
         apilarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
